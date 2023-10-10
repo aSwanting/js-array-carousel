@@ -50,14 +50,14 @@ document.querySelectorAll(".toolbar-thumbnail").forEach(function (thumbnail) {
 
         carouselImagesDOM[activeCarouselImage].classList.remove("active")
         toolbarThumbnailDOM[activeCarouselImage].classList.remove("highlighted")
+
         activeCarouselImage = thumbnail.id
+        
         carouselImagesDOM[activeCarouselImage].classList.add("active")
         toolbarThumbnailDOM[activeCarouselImage].classList.add("highlighted")
 
     })
 })
-
-
 
 
 // Step backwards through images, looping back to front
