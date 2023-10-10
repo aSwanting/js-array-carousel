@@ -19,50 +19,83 @@ for (i = 0; i < images.length; i++) {
 
 }
 
-
-
 const leftArrowDOM = document.getElementById("arrow-btn-left")
 const rightArrowDOM = document.getElementById("arrow-btn-right")
+let activeCarouselImage = 0
 
 leftArrowDOM.addEventListener("click", function () {
 
     const carouselImagesDOM = document.querySelectorAll(".carousel-img")
 
-    for (i = 0; i < carouselImagesDOM.length; i++) {
+    carouselImagesDOM[activeCarouselImage].classList.remove("active")
 
-        if (carouselImagesDOM[i].classList.contains("active")) {
+    if (activeCarouselImage > 0) {
 
-            if (i > 0) {
+        carouselImagesDOM[--activeCarouselImage].classList.add("active")
 
-                console.log(i)
-                carouselImagesDOM[i].classList.remove("active")
-                carouselImagesDOM[i - 1].classList.add("active")
+    } else {
 
-            }
-
-        }
+        activeCarouselImage = carouselImagesDOM.length - 1
+        carouselImagesDOM[activeCarouselImage].classList.add("active")
 
     }
+
+    console.log(activeCarouselImage)
+
 })
 
 rightArrowDOM.addEventListener("click", function () {
 
     const carouselImagesDOM = document.querySelectorAll(".carousel-img")
 
-    for (i = carouselImagesDOM.length - 1; i >= 0; i--) {
+    carouselImagesDOM[activeCarouselImage].classList.remove("active")
 
+    if (activeCarouselImage < carouselImagesDOM.length - 1) {
+
+        carouselImagesDOM[++activeCarouselImage].classList.add("active")
+
+    } else {
+
+        activeCarouselImage = 0
+        carouselImagesDOM[activeCarouselImage].classList.add("active")
+
+    }
+
+    console.log(activeCarouselImage)
+
+})
+
+
+
+
+
+/*     for (i = 0; i < carouselImagesDOM.length; i++) {
+ 
         if (carouselImagesDOM[i].classList.contains("active")) {
-
+ 
+            if (i > 0) {
+ 
+                console.log(i)
+                carouselImagesDOM[i].classList.remove("active")
+                carouselImagesDOM[i - 1].classList.add("active")
+ 
+            }
+ 
+        }
+ 
+    } */
+/*     for (i = carouselImagesDOM.length - 1; i >= 0; i--) {
+ 
+        if (carouselImagesDOM[i].classList.contains("active")) {
+ 
             if (i < carouselImagesDOM.length - 1) {
-
+ 
                 console.log(i)
                 carouselImagesDOM[i].classList.remove("active")
                 carouselImagesDOM[i + 1].classList.add("active")
-
+ 
             }
-
+ 
         }
-
-    }
-})
-
+ 
+    } */
