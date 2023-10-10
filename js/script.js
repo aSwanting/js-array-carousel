@@ -26,6 +26,7 @@ for (i = 0; i < images.length; i++) {
     const toolbarDOM = document.querySelector(".thumbnail-gallery")
     const newCarouselThumbnail = document.createElement("img")
     newCarouselThumbnail.className = "toolbar-thumbnail"
+    newCarouselThumbnail.id = i
     newCarouselThumbnail.src = images[i]
     toolbarDOM.append(newCarouselThumbnail)
 
@@ -35,13 +36,32 @@ for (i = 0; i < images.length; i++) {
 
 
 // Declare active image index
+const carouselImagesDOM = document.querySelectorAll(".carousel-img")
+const toolbarThumbnailDOM = document.querySelectorAll(".toolbar-thumbnail")
 let activeCarouselImage = 0
+
+// Select image from thumbnail 
+/* document.querySelectorAll(".toolbar-thumbnail").addEventListener("click", function () {
+    console.log(document.querySelector(".toolbar-thumbnail"))
+}) */
+
+document.querySelectorAll(".toolbar-thumbnail").forEach(function (thumbnail) {
+    thumbnail.addEventListener("click", function () {
+
+        carouselImagesDOM[activeCarouselImage].classList.remove("active")
+        toolbarThumbnailDOM[activeCarouselImage].classList.remove("highlighted")
+        activeCarouselImage = thumbnail.id
+        carouselImagesDOM[activeCarouselImage].classList.add("active")
+        toolbarThumbnailDOM[activeCarouselImage].classList.add("highlighted")
+
+    })
+})
+
+
+
 
 // Step backwards through images, looping back to front
 document.getElementById("arrow-btn-left").addEventListener("click", function () {
-
-    const carouselImagesDOM = document.querySelectorAll(".carousel-img")
-    const toolbarThumbnailDOM = document.querySelectorAll(".toolbar-thumbnail")
 
     carouselImagesDOM[activeCarouselImage].classList.remove("active")
     toolbarThumbnailDOM[activeCarouselImage].classList.remove("highlighted")
@@ -63,9 +83,6 @@ document.getElementById("arrow-btn-left").addEventListener("click", function () 
 
 // Step forwards through images, looping front to back
 document.getElementById("arrow-btn-right").addEventListener("click", function () {
-
-    const carouselImagesDOM = document.querySelectorAll(".carousel-img")
-    const toolbarThumbnailDOM = document.querySelectorAll(".toolbar-thumbnail")
 
     carouselImagesDOM[activeCarouselImage].classList.remove("active")
     toolbarThumbnailDOM[activeCarouselImage].classList.remove("highlighted")
