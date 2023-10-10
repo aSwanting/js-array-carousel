@@ -37,6 +37,11 @@
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
     filter: opacity(0.4);
     cursor: pointer;
+    transition: 200ms all;
+}
+
+.toolbar-thumbnail:hover {
+    transform: scale(108%);    
 }
 
 .active {
