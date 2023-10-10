@@ -65,37 +65,3 @@ rightArrowDOM.addEventListener("click", function () {
 
 })
 
-
-
-
-
-/*     for (i = 0; i < carouselImagesDOM.length; i++) {
- 
-        if (carouselImagesDOM[i].classList.contains("active")) {
- 
-            if (i > 0) {
- 
-                console.log(i)
-                carouselImagesDOM[i].classList.remove("active")
-                carouselImagesDOM[i - 1].classList.add("active")
- 
-            }
- 
-        }
- 
-    } */
-/*     for (i = carouselImagesDOM.length - 1; i >= 0; i--) {
- 
-        if (carouselImagesDOM[i].classList.contains("active")) {
- 
-            if (i < carouselImagesDOM.length - 1) {
- 
-                console.log(i)
-                carouselImagesDOM[i].classList.remove("active")
-                carouselImagesDOM[i + 1].classList.add("active")
- 
-            }
- 
-        }
- 
-    } */
