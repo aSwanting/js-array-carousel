@@ -6,6 +6,7 @@
     font-size: 24px;
     cursor: pointer;
     padding: 0 30px;
+    user-select: none;
 }
 
 
