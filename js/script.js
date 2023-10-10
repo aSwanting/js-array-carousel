@@ -1,3 +1,4 @@
+// Create array with image paths
 const images = [
     "./img/01.webp",
     "./img/02.webp",
@@ -6,7 +7,7 @@ const images = [
     "./img/05.webp",
 ]
 
-
+// Add images to DOM, only first image visible
 for (i = 0; i < images.length; i++) {
 
     const carousel = document.querySelector(".carousel")
@@ -15,50 +16,46 @@ for (i = 0; i < images.length; i++) {
     newCarouselItem.src = images[i]
     carousel.append(newCarouselItem)
 
-    i === 0 ? newCarouselItem.classList.add("active") : newCarouselItem.classList.remove("active")
+    if (i === 0) { newCarouselItem.classList.add("active") }
 
 }
 
-const leftArrowDOM = document.getElementById("arrow-btn-left")
-const rightArrowDOM = document.getElementById("arrow-btn-right")
+
+// Declare active image index
 let activeCarouselImage = 0
 
-leftArrowDOM.addEventListener("click", function () {
+// Step backwards through images, looping back to front
+document.getElementById("arrow-btn-left").addEventListener("click", function () {
 
     const carouselImagesDOM = document.querySelectorAll(".carousel-img")
-
     carouselImagesDOM[activeCarouselImage].classList.remove("active")
 
     if (activeCarouselImage > 0) {
-
         carouselImagesDOM[--activeCarouselImage].classList.add("active")
 
     } else {
 
         activeCarouselImage = carouselImagesDOM.length - 1
         carouselImagesDOM[activeCarouselImage].classList.add("active")
-
     }
 
     console.log(activeCarouselImage)
 
 })
 
-rightArrowDOM.addEventListener("click", function () {
+// Step forwards through images, looping front to back
+document.getElementById("arrow-btn-right").addEventListener("click", function () {
 
     const carouselImagesDOM = document.querySelectorAll(".carousel-img")
-
     carouselImagesDOM[activeCarouselImage].classList.remove("active")
 
     if (activeCarouselImage < carouselImagesDOM.length - 1) {
-
         carouselImagesDOM[++activeCarouselImage].classList.add("active")
 
     } else {
 
         activeCarouselImage = 0
         carouselImagesDOM[activeCarouselImage].classList.add("active")
-
     }
 
     console.log(activeCarouselImage)
