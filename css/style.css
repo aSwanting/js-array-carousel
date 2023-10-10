@@ -1,0 +1,15 @@
+.app-main {
+    background-image: linear-gradient(to right bottom, #8bb0b1, #7ea2b0, #7d92aa, #83809d, #896f88);
+}
+
+.app-toolbar {
+    font-size: 20px;
+}
+
+
+.carousel-img {
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 25px;
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.5);
+}
