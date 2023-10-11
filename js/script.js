@@ -98,7 +98,7 @@ toolbarThumbnailDOM.forEach(function (thumbnail) {
     thumbnail.addEventListener("click", function () {
 
         prevCarouselImage = activeCarouselImage
-        activeCarouselImage = thumbnail.id
+        activeCarouselImage = parseInt(thumbnail.id)
 
         console.log(prevCarouselImage, activeCarouselImage)
         carouselNavigation(prevCarouselImage, activeCarouselImage)
