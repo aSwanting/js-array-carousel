@@ -72,17 +72,18 @@ document.getElementById("arrow-btn-left").addEventListener("click", function () 
     galleryBackgroundDOM[activeCarouselImage].classList.remove("bg-active")
 
     if (activeCarouselImage > 0) {
-        carouselImagesDOM[--activeCarouselImage].classList.add("active")
-        toolbarThumbnailDOM[activeCarouselImage].classList.add("highlighted")
-        galleryBackgroundDOM[activeCarouselImage].classList.add("bg-active")
+
+        activeCarouselImage--
 
     } else {
 
         activeCarouselImage = carouselImagesDOM.length - 1
-        carouselImagesDOM[activeCarouselImage].classList.add("active")
-        toolbarThumbnailDOM[activeCarouselImage].classList.add("highlighted")
-        galleryBackgroundDOM[activeCarouselImage].classList.add("bg-active")
+
     }
+
+    carouselImagesDOM[activeCarouselImage].classList.add("active")
+    toolbarThumbnailDOM[activeCarouselImage].classList.add("highlighted")
+    galleryBackgroundDOM[activeCarouselImage].classList.add("bg-active")
 
 })
 
@@ -95,17 +96,17 @@ document.getElementById("arrow-btn-right").addEventListener("click", function ()
     galleryBackgroundDOM[activeCarouselImage].classList.remove("bg-active")
 
     if (activeCarouselImage < carouselImagesDOM.length - 1) {
-        carouselImagesDOM[++activeCarouselImage].classList.add("active")
-        toolbarThumbnailDOM[activeCarouselImage].classList.add("highlighted")
-        galleryBackgroundDOM[activeCarouselImage].classList.add("bg-active")
+
+        activeCarouselImage++
 
     } else {
 
         activeCarouselImage = 0
-        carouselImagesDOM[activeCarouselImage].classList.add("active")
-        toolbarThumbnailDOM[activeCarouselImage].classList.add("highlighted")
-        galleryBackgroundDOM[activeCarouselImage].classList.add("bg-active")
     }
+
+    carouselImagesDOM[activeCarouselImage].classList.add("active")
+    toolbarThumbnailDOM[activeCarouselImage].classList.add("highlighted")
+    galleryBackgroundDOM[activeCarouselImage].classList.add("bg-active")
 
 })
 
