@@ -8,6 +8,7 @@ const images = [
     "./img/05.webp",
 ]
 
+
 // Add images to DOM gallery, gallery background and thumbnail
 for (i = 0; i < images.length; i++) {
 
@@ -40,6 +41,7 @@ for (i = 0; i < images.length; i++) {
 
 }
 
+
 // Declare active image index
 const carouselImagesDOM = document.querySelectorAll(".carousel-img")
 const toolbarThumbnailDOM = document.querySelectorAll(".toolbar-thumbnail")
@@ -53,9 +55,9 @@ let prevCarouselImage
 document.getElementById("arrow-btn-left").addEventListener("click", function () {
 
     if (activeCarouselImage > 0) {
-
+   
+        prevCarouselImage = activeCarouselImage
         activeCarouselImage--
-        prevCarouselImage = activeCarouselImage + 1
 
     } else {
 
@@ -74,9 +76,9 @@ document.getElementById("arrow-btn-right").addEventListener("click", function ()
 
     if (activeCarouselImage < carouselImagesDOM.length - 1) {
 
+        prevCarouselImage = activeCarouselImage
         activeCarouselImage++
-        prevCarouselImage = activeCarouselImage - 1
-
+         
     } else {
 
         activeCarouselImage = 0
@@ -103,6 +105,7 @@ toolbarThumbnailDOM.forEach(function (thumbnail) {
 
     })
 })
+
 
 // Navigation function
 function carouselNavigation(currentImage, nextImage) {
