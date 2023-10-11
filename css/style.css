@@ -5,6 +5,7 @@
 
 .app-toolbar {
     gap: 6%;
+    border-top: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 .bg-image {
