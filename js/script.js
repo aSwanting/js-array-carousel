@@ -49,6 +49,7 @@ let activeCarouselImage = 0
 let prevCarouselImage
 
 
+// Navigate Left
 document.getElementById("arrow-btn-left").addEventListener("click", function () {
 
     if (activeCarouselImage > 0) {
@@ -68,6 +69,7 @@ document.getElementById("arrow-btn-left").addEventListener("click", function () 
 })
 
 
+// Navigate Right
 document.getElementById("arrow-btn-right").addEventListener("click", function () {
 
     if (activeCarouselImage < carouselImagesDOM.length - 1) {
@@ -88,6 +90,7 @@ document.getElementById("arrow-btn-right").addEventListener("click", function ()
 })
 
 
+// Navigate via Thumbnail
 toolbarThumbnailDOM.forEach(function (thumbnail) {
 
     thumbnail.addEventListener("click", function () {
@@ -101,16 +104,16 @@ toolbarThumbnailDOM.forEach(function (thumbnail) {
     })
 })
 
+// Navigation function
+function carouselNavigation(currentImage, nextImage) {
 
-function carouselNavigation(a, b) {
+    carouselImagesDOM[currentImage].classList.remove("active")
+    toolbarThumbnailDOM[currentImage].classList.remove("highlighted")
+    galleryBackgroundDOM[currentImage].classList.remove("bg-active")
 
-    carouselImagesDOM[a].classList.remove("active")
-    toolbarThumbnailDOM[a].classList.remove("highlighted")
-    galleryBackgroundDOM[a].classList.remove("bg-active")
-
-    carouselImagesDOM[b].classList.add("active")
-    toolbarThumbnailDOM[b].classList.add("highlighted")
-    galleryBackgroundDOM[b].classList.add("bg-active")
+    carouselImagesDOM[nextImage].classList.add("active")
+    toolbarThumbnailDOM[nextImage].classList.add("highlighted")
+    galleryBackgroundDOM[nextImage].classList.add("bg-active")
 
 }
 
