@@ -24,9 +24,9 @@ for (i = 0; i < images.length; i++) {
     newCarouselThumbnail.className = "toolbar-thumbnail"
     carouselBackground.className = "bg-image"
 
-    newCarouselItem.src = images[i]
+    newCarouselItem.src = images[i]    
+    carouselBackground.src = images[i]    
     newCarouselThumbnail.src = images[i]
-    carouselBackground.src = images[i]
     newCarouselThumbnail.id = i
 
     carouselDOM.append(newCarouselItem)
