@@ -27,7 +27,7 @@ for (i = 0; i < images.length; i++) {
     newCarouselItem.src = images[i]    
     carouselBackground.src = images[i]    
     newCarouselThumbnail.src = images[i]
-    newCarouselThumbnail.id = i
+    // newCarouselThumbnail.id = i
 
     carouselDOM.append(newCarouselItem)
     toolbarDOM.append(newCarouselThumbnail)
@@ -93,12 +93,12 @@ document.getElementById("arrow-btn-right").addEventListener("click", function ()
 
 
 // Navigate via Thumbnail
-toolbarThumbnailDOM.forEach(function (thumbnail) {
+toolbarThumbnailDOM.forEach(function (thumbnail, index) {
 
     thumbnail.addEventListener("click", function () {
 
         prevCarouselImage = activeCarouselImage
-        activeCarouselImage = parseInt(thumbnail.id)
+        activeCarouselImage = index //parseInt(thumbnail.id)
 
         console.log(prevCarouselImage, activeCarouselImage)
         carouselNavigation(prevCarouselImage, activeCarouselImage)
